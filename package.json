@@ -1,19 +1,24 @@
 {
   "name": "lesson-03",
   "version": "1.0.0",
-  "type": "module",
-  "main": "index.ts",
+  
+  "main": "src/index.ts",
   "author": "efimov",
   "license": "MIT",
   "scripts": {
     "watch": "./node_modules/.bin/tsc -w",
     "dev": "./node_modules/.bin/nodemon dist/\\index.js",
     "build": "yarn && ./node_modules/.bin/tsc",
-    "start": "node ./dist/index.js"
+    "start": "node ./dist/index.js",
+    "test": "jest"
   },
-
   "dependencies": {
-    "express": "^5.1.0"
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "express": "^5.1.0",
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.5"
   },
   "devDependencies": {
     "@types/express": "^5.0.4",
