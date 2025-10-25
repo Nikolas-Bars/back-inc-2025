@@ -1,7 +1,16 @@
 
-
-export type DBtype = {
-    videos: Array<any>,
+export type VideoType = {
+    "id": number,
+    "title": string,
+    "author": string,
+    "canBeDownloaded": boolean,
+    "minAgeRestriction": boolean,
+    "createdAt": string,
+    "publicationDate": string,
+    "availableResolutions": string[]
+}
+export type DBVideotype = {
+    videos: Array<VideoType>,
 }
 export type DriverType = {
     id: number,
@@ -14,8 +23,17 @@ export const DriverStatus = {
     Online: 1,
     Offline: 2,
 }
-export const db: DBtype = {
-    videos: [],
+export const db: DBVideotype = {
+    videos: [{
+        id: 1,
+        title: 'video1',
+        author: 'Loh',
+        canBeDownloaded: false,
+        minAgeRestriction: false,
+        createdAt: '20.09.2024 16:53:00',
+        publicationDate: '20.09.2024 16:53:00',
+        availableResolutions: ['p144']
+    }],
 }
 
 export type DriversDBType = {
@@ -32,10 +50,10 @@ export const dbDrivers: DriversDBType = {
     }]
 }
 
-export const setDB = (dataset?: Partial<DBtype> ) => {
+export const setVideoDB = (dataset: DBVideotype ) => {
     if(!dataset) {
         db.videos = []
         return
     }
-    db.videos = dataset.videos || db.videos
+    db.videos = [...db.videos, ...dataset.videos]
 }

@@ -1,2 +1,3 @@
+import {VideoType} from "../db/db";
 
-export type OutputVideoType = Array<any>
+export type OutputVideoType = Array<VideoType>
