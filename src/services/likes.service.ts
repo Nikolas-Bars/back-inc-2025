@@ -1,5 +1,3 @@
-
-import {LikesHistoryRepository} from "../composition-root";
 import {CreateLikeInputModel} from "../models/likes/CreateLikeInputModel";
 import {LikesHistoryRepositoryClass} from "../repositories/likes-history-repository-class";
 
@@ -9,10 +7,9 @@ export class LikesHistoryServiceClass {
 
     async createLike(likeData: CreateLikeInputModel): Promise<any> {
 
+        await this.LikesHistoryRepository.createLike(likeData)
 
-        const result = await this.LikesHistoryRepository.createLike(likeData)
-
-        return 'Like'
+        return likeData.status
 
     }
 }
