@@ -16,7 +16,7 @@ type SortDataType = {
 
 type QueryParamsForPostsByBlogId = {
     sortBy: string
-    sortDirection: string
+    sortDirection: SortDirection
     pageNumber: number
     pageSize: number
 }
@@ -44,6 +44,7 @@ export class BlogQueryRepository {
             let sortOptions: {[key: string]: SortDirection} = {};
 
             if (sortBy && sortDirection) {
+                // например { createdAt: desc }
                 sortOptions[sortBy] = sortDirection;
             }
             const blogs = await BlogsModel
@@ -89,7 +90,7 @@ export class BlogQueryRepository {
             let sortOptions: {[key: string]: SortDirection} = {};
 
             if (sortBy && sortDirection) {
-                sortOptions[sortBy as string] = sortDirection as SortDirection;
+                sortOptions[sortBy] = sortDirection;
             }
 
             const posts = await PostsModel

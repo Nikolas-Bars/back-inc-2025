@@ -1,5 +1,5 @@
 import {LikesHistoryServiceClass} from "../services/likes.service";
-import express, {Request, Response} from 'express'
+import {Request, Response} from 'express'
 import {CreateLikeOutputModel} from "../models/likes/CreateLikeOutputModel";
 import {CreateLikeInputModel} from "../models/likes/CreateLikeInputModel";
 

@@ -58,7 +58,6 @@ describe('/blogs', () => {
             isMembership: expect.any(Boolean),
             createdAt: expect.any(String)
         })
-
         expect.setState({ blogId: createdBlog.id })
 
         const getBlogsResponse = await request(app)
@@ -94,7 +93,13 @@ describe('/blogs', () => {
             content: expect.any(String),
             blogId: blogId,
             blogName: expect.any(String),
-            createdAt: expect.any(String)
+            createdAt: expect.any(String),
+            extendedLikesInfo: {
+              dislikesCount: 0,
+              likesCount: 0,
+              myStatus: 'None',
+              newestLikes: []
+            },
         })
     })
 
@@ -119,7 +124,13 @@ describe('/blogs', () => {
                     content: expect.any(String),
                     blogId: blogId,
                     blogName: expect.any(String),
-                    createdAt: expect.any(String)
+                    createdAt: expect.any(String),
+                    extendedLikesInfo: {
+                      dislikesCount: 0,
+                      likesCount: 0,
+                      myStatus: 'None',
+                      newestLikes: []
+                    },
                 }
             ]
         })

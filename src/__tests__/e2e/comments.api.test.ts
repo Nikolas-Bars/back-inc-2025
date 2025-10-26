@@ -63,12 +63,18 @@ describe('comments', () => {
             .expect(201)
 
         const createdPost = responsePost.body
-
+      console.log(createdPost, 'createdPost');
         expect(createdPost).toEqual({
             ...postBodyData,
             id: expect.any(String),
             blogName: "new blog name",
-            createdAt: expect.any(String)
+            createdAt: expect.any(String),
+            extendedLikesInfo: {
+              dislikesCount: expect.any(Number),
+              likesCount: expect.any(Number),
+              myStatus: expect.any(String),
+              newestLikes: expect.any(Array),
+            }
         })
 
         const loginData = {

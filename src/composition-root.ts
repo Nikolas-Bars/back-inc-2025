@@ -11,7 +11,6 @@ export const UserService = new UserServiceClass(UserRepository)
 
 export const UserControllerInstance = new UserController(UserService)
 
-
 export const LikesHistoryRepository = new LikesHistoryRepositoryClass()
 
 export const LikesHistoryService = new LikesHistoryServiceClass(LikesHistoryRepository)

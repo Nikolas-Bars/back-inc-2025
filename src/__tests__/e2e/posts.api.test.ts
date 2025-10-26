@@ -60,7 +60,13 @@ describe('/posts', () => {
             ...postBodyData,
             id: expect.any(String),
             blogName: "new blog name",
-            createdAt: expect.any(String)
+            createdAt: expect.any(String),
+            extendedLikesInfo: {
+              dislikesCount: expect.any(Number),
+              likesCount: expect.any(Number),
+              myStatus: expect.any(String),
+              newestLikes: []
+            },
         })
 
         expect.setState({ blogIdForPost: responseBlog.body.id.toString(), postId: createdPost.id.toString() })
@@ -107,7 +113,13 @@ describe('/posts', () => {
             content: "some content",
             blogId: blogIdForPost,
             blogName: "new blog name",
-            createdAt: expect.any(String)
+            createdAt: expect.any(String),
+            extendedLikesInfo: {
+              dislikesCount: expect.any(Number),
+              likesCount: expect.any(Number),
+              myStatus: expect.any(String),
+              newestLikes: []
+            },
         })
     })
 

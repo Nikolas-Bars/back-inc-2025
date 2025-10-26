@@ -20,9 +20,9 @@ describe('/posts', () => {
 
         // создаем трех пользователей
 
-        const users = await CreateUsers(app, 5)
+        const users = await CreateUsers(app, 7)
 
-        expect(users).toHaveLength(3)
+        expect(users).toHaveLength(7)
 
     })
 })

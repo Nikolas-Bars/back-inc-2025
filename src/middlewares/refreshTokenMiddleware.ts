@@ -8,7 +8,7 @@ import {SecurityDbType} from "../models/securityDevices/securityDbType";
 export const refreshTokenMiddleware = async (req: Request, res: Response, next: NextFunction)=> {
 
     if (!req.cookies.refreshToken) return res.sendStatus(401)
-
+  console.log(req.cookies.refreshToken);
     const refreshToken = req.cookies.refreshToken
     // проверяем что он еще действует
     const payload: any = await JWTService.verifyRefreshToken(refreshToken)
